@@ -9,7 +9,46 @@
 /* Begin PBXBuildFile section */
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		A57B470C110B2E1700046AFE /* UKFileWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A57B4703110B2E1700046AFE /* UKFileWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A57B470D110B2E1700046AFE /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B4704110B2E1700046AFE /* UKFileWatcher.m */; };
+		A57B470E110B2E1700046AFE /* UKFNSubscribeFileWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A57B4705110B2E1700046AFE /* UKFNSubscribeFileWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A57B470F110B2E1700046AFE /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B4706110B2E1700046AFE /* UKFNSubscribeFileWatcher.m */; };
+		A57B4710110B2E1700046AFE /* UKKQueue Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = A57B4707110B2E1700046AFE /* UKKQueue Readme.txt */; };
+		A57B4711110B2E1700046AFE /* UKKQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A57B4708110B2E1700046AFE /* UKKQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A57B4712110B2E1700046AFE /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B4709110B2E1700046AFE /* UKKQueue.m */; };
+		A57B4713110B2E1700046AFE /* UKMainThreadProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A57B470A110B2E1700046AFE /* UKMainThreadProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A57B4714110B2E1700046AFE /* UKMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B470B110B2E1700046AFE /* UKMainThreadProxy.m */; };
+		A57B4718110B2E6C00046AFE /* Zathras.h in Headers */ = {isa = PBXBuildFile; fileRef = A57B4717110B2E6C00046AFE /* Zathras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A57B4758110B31DE00046AFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B4757110B31DE00046AFE /* main.m */; };
+		A57B475B110B31F900046AFE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57B4753110B311F00046AFE /* MainMenu.xib */; };
+		A57B476F110B32D500046AFE /* Zathras.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Zathras.framework */; };
+		A57B4782110B331B00046AFE /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B4781110B331B00046AFE /* Controller.m */; };
+		A57B47A8110B373D00046AFE /* Zathras.framework in Copy to Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Zathras.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A57B4769110B326500046AFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Zathras */;
+			remoteInfo = Zathras;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A57B4768110B325C00046AFE /* Copy to Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A57B47A8110B373D00046AFE /* Zathras.framework in Copy to Frameworks */,
+			);
+			name = "Copy to Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -19,6 +58,22 @@
 		32DBCF5E0370ADEE00C91783 /* Zathras_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zathras_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Zathras.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Zathras.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57B4703110B2E1700046AFE /* UKFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UKFileWatcher.h; path = src/UKKQueue/UKFileWatcher.h; sourceTree = "<group>"; };
+		A57B4704110B2E1700046AFE /* UKFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UKFileWatcher.m; path = src/UKKQueue/UKFileWatcher.m; sourceTree = "<group>"; };
+		A57B4705110B2E1700046AFE /* UKFNSubscribeFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UKFNSubscribeFileWatcher.h; path = src/UKKQueue/UKFNSubscribeFileWatcher.h; sourceTree = "<group>"; };
+		A57B4706110B2E1700046AFE /* UKFNSubscribeFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UKFNSubscribeFileWatcher.m; path = src/UKKQueue/UKFNSubscribeFileWatcher.m; sourceTree = "<group>"; };
+		A57B4707110B2E1700046AFE /* UKKQueue Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "UKKQueue Readme.txt"; path = "src/UKKQueue/UKKQueue Readme.txt"; sourceTree = "<group>"; };
+		A57B4708110B2E1700046AFE /* UKKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UKKQueue.h; path = src/UKKQueue/UKKQueue.h; sourceTree = "<group>"; };
+		A57B4709110B2E1700046AFE /* UKKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UKKQueue.m; path = src/UKKQueue/UKKQueue.m; sourceTree = "<group>"; };
+		A57B470A110B2E1700046AFE /* UKMainThreadProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UKMainThreadProxy.h; path = src/UKKQueue/UKMainThreadProxy.h; sourceTree = "<group>"; };
+		A57B470B110B2E1700046AFE /* UKMainThreadProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UKMainThreadProxy.m; path = src/UKKQueue/UKMainThreadProxy.m; sourceTree = "<group>"; };
+		A57B4717110B2E6C00046AFE /* Zathras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zathras.h; path = src/Zathras.h; sourceTree = "<group>"; };
+		A57B4731110B305900046AFE /* MonitorDirectoryTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitorDirectoryTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57B4733110B305A00046AFE /* MonitorDirectoryTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MonitorDirectoryTest-Info.plist"; sourceTree = "<group>"; };
+		A57B4753110B311F00046AFE /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenu.xib; path = "Test/Monitor Directory/Resources/MainMenu.xib"; sourceTree = "<group>"; };
+		A57B4757110B31DE00046AFE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Test/Monitor Directory/src/main.m"; sourceTree = "<group>"; };
+		A57B4780110B331B00046AFE /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Controller.h; path = "Test/Monitor Directory/src/Controller.h"; sourceTree = "<group>"; };
+		A57B4781110B331B00046AFE /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Controller.m; path = "Test/Monitor Directory/src/Controller.m"; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -31,6 +86,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A57B472F110B305900046AFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57B476F110B32D500046AFE /* Zathras.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* Zathras.framework */,
+				A57B4731110B305900046AFE /* MonitorDirectoryTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,6 +114,7 @@
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				A57B473F110B30A200046AFE /* Test */,
 			);
 			name = Zathras;
 			sourceTree = "<group>";
@@ -75,6 +140,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A57B46FF110B2DFA00046AFE /* UKKQueue */,
+				A57B4717110B2E6C00046AFE /* Zathras.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -105,6 +172,58 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		A57B46FF110B2DFA00046AFE /* UKKQueue */ = {
+			isa = PBXGroup;
+			children = (
+				A57B4703110B2E1700046AFE /* UKFileWatcher.h */,
+				A57B4704110B2E1700046AFE /* UKFileWatcher.m */,
+				A57B4705110B2E1700046AFE /* UKFNSubscribeFileWatcher.h */,
+				A57B4706110B2E1700046AFE /* UKFNSubscribeFileWatcher.m */,
+				A57B4707110B2E1700046AFE /* UKKQueue Readme.txt */,
+				A57B4708110B2E1700046AFE /* UKKQueue.h */,
+				A57B4709110B2E1700046AFE /* UKKQueue.m */,
+				A57B470A110B2E1700046AFE /* UKMainThreadProxy.h */,
+				A57B470B110B2E1700046AFE /* UKMainThreadProxy.m */,
+			);
+			name = UKKQueue;
+			sourceTree = "<group>";
+		};
+		A57B473F110B30A200046AFE /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				A57B4740110B30AD00046AFE /* Monitor Directory */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		A57B4740110B30AD00046AFE /* Monitor Directory */ = {
+			isa = PBXGroup;
+			children = (
+				A57B4752110B30F800046AFE /* Resources */,
+				A57B4741110B30B700046AFE /* Classes */,
+				A57B4733110B305A00046AFE /* MonitorDirectoryTest-Info.plist */,
+			);
+			name = "Monitor Directory";
+			sourceTree = "<group>";
+		};
+		A57B4741110B30B700046AFE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A57B4757110B31DE00046AFE /* main.m */,
+				A57B4780110B331B00046AFE /* Controller.h */,
+				A57B4781110B331B00046AFE /* Controller.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		A57B4752110B30F800046AFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A57B4753110B311F00046AFE /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -112,6 +231,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57B470C110B2E1700046AFE /* UKFileWatcher.h in Headers */,
+				A57B470E110B2E1700046AFE /* UKFNSubscribeFileWatcher.h in Headers */,
+				A57B4711110B2E1700046AFE /* UKKQueue.h in Headers */,
+				A57B4713110B2E1700046AFE /* UKMainThreadProxy.h in Headers */,
+				A57B4718110B2E6C00046AFE /* Zathras.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +261,25 @@
 			productReference = 8DC2EF5B0486A6940098B216 /* Zathras.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A57B4730110B305900046AFE /* MonitorDirectoryTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57B4736110B305B00046AFE /* Build configuration list for PBXNativeTarget "MonitorDirectoryTest" */;
+			buildPhases = (
+				A57B472D110B305900046AFE /* Resources */,
+				A57B472E110B305900046AFE /* Sources */,
+				A57B472F110B305900046AFE /* Frameworks */,
+				A57B4768110B325C00046AFE /* Copy to Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A57B476A110B326500046AFE /* PBXTargetDependency */,
+			);
+			name = MonitorDirectoryTest;
+			productName = MonitorDirectoryTest;
+			productReference = A57B4731110B305900046AFE /* MonitorDirectoryTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -151,6 +294,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* Zathras */,
+				A57B4730110B305900046AFE /* MonitorDirectoryTest */,
 			);
 		};
 /* End PBXProject section */
@@ -161,6 +305,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				A57B4710110B2E1700046AFE /* UKKQueue Readme.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57B472D110B305900046AFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57B475B110B31F900046AFE /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,10 +324,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57B470D110B2E1700046AFE /* UKFileWatcher.m in Sources */,
+				A57B470F110B2E1700046AFE /* UKFNSubscribeFileWatcher.m in Sources */,
+				A57B4712110B2E1700046AFE /* UKKQueue.m in Sources */,
+				A57B4714110B2E1700046AFE /* UKMainThreadProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57B472E110B305900046AFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57B4758110B31DE00046AFE /* main.m in Sources */,
+				A57B4782110B331B00046AFE /* Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A57B476A110B326500046AFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* Zathras */;
+			targetProxy = A57B4769110B326500046AFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
@@ -253,6 +427,54 @@
 			};
 			name = Release;
 		};
+		A57B4734110B305A00046AFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "MonitorDirectoryTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MonitorDirectoryTest;
+			};
+			name = Debug;
+		};
+		A57B4735110B305A00046AFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "MonitorDirectoryTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MonitorDirectoryTest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -270,6 +492,15 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57B4736110B305B00046AFE /* Build configuration list for PBXNativeTarget "MonitorDirectoryTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57B4734110B305A00046AFE /* Debug */,
+				A57B4735110B305A00046AFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

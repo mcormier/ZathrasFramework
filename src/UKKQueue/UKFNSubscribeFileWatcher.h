@@ -5,10 +5,14 @@
     COPYRIGHT:  (c) 2005 M. Uli Kusterer, all rights reserved.
     
 	AUTHORS:	M. Uli Kusterer - UK
+            Matthieu Cormier - M@
     
     LICENSES:   MIT License
 
 	REVISIONS:
+    2010-01-23  M@  Check that path is a directory in addPath.
+                    sharedFileWatcher specifies protocol.
+                    Moved private method out of public header file
 		2006-03-13	UK	Commented, added singleton.
 		2005-03-02	UK	Created.
    ========================================================================== */
@@ -33,17 +37,12 @@
 //  Class declaration:
 // -----------------------------------------------------------------------------
 
-@interface UKFNSubscribeFileWatcher : NSObject <UKFileWatcher>
-{
-    id                      delegate;           // Delegate must respond to UKFileWatcherDelegate protocol.
-    NSMutableDictionary*    subscriptions;      // List of FNSubscription pointers in NSValues, with the pathnames as their keys.
+@interface UKFNSubscribeFileWatcher : NSObject <UKFileWatcher> {
+  id<UKFileWatcherDelegate>                      delegate;           
+  // List of FNSubscription pointers in NSValues, with the pathnames as their keys.
+  NSMutableDictionary*    subscriptions;     
 }
 
-+(id) sharedFileWatcher;
-
-// UKFileWatcher defines the methods: addPath: removePath: and delegate accessors.
-
-// Private:
--(void) sendDelegateMessage: (FNMessage)message forSubscription: (FNSubscriptionRef)subscription;
++(id<UKFileWatcher>) sharedFileWatcher;
 
 @end

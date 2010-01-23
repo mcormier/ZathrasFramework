@@ -46,16 +46,13 @@
 
 static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
 
+@interface UKKQueue (private)
+-(void)		watcherThread: (id)sender;
+-(void)		postNotification: (NSString*)nm forFile: (NSString*)fp; // Message-posting bottleneck.
+@end
 
 @implementation UKKQueue
 
-// Deprecated:
-#if UKKQUEUE_OLD_SINGLETON_ACCESSOR_NAME
-+(UKKQueue*) sharedQueue
-{
-	return [self sharedFileWatcher];
-}
-#endif
 
 // -----------------------------------------------------------------------------
 //  sharedQueue:
@@ -264,20 +261,22 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
 //		as well as addPathToQueue:.
 //
 //	REVISIONS:
+//    2010-01-23  M@  index => int to NSUInteger.  To eliminate warning.
 //		2004-03-13	UK	Documented.
 // -----------------------------------------------------------------------------
 
 -(void) removePathFromQueue: (NSString*)path
 {
-    int		index = 0;
+    NSUInteger		index = 0;
     int		fd = -1;
     
     AT_SYNCHRONIZED( self )
     {
         index = [watchedPaths indexOfObject: path];
         
-        if( index == NSNotFound )
-            return;
+        if (index == NSNotFound ) {
+           return; }
+           
         
         fd = [[watchedFDs objectAtIndex: index] intValue];
         
@@ -399,7 +398,9 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
 //		send them elsewhere.
 //
 //	REVISIONS:
-//      2004-02-27  UK  Changed this to send new notification, and the old one
+//    2010-01-23  M@  Removed UKKQUEUE_BACKWARDS_COMPATIBLE and
+//                    UKKQUEUE_SEND_STUPID_NOTIFICATIONS
+//    2004-02-27  UK  Changed this to send new notification, and the old one
 //                      only to objects that respond to it. The old category on
 //                      NSObject could cause problems with the proxy itself.
 //		2004-10-31	UK	Helloween fun: Make this use a mainThreadProxy and
@@ -408,26 +409,13 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
 //		2004-03-13	UK	Documented.
 // -----------------------------------------------------------------------------
 
--(void) postNotification: (NSString*)nm forFile: (NSString*)fp
-{
-	if( delegateProxy )
-    {
-        #if UKKQUEUE_BACKWARDS_COMPATIBLE
-        if( ![delegateProxy respondsToSelector: @selector(watcher:receivedNotification:forPath:)] )
-            [delegateProxy kqueue: self receivedNotification: nm forFile: fp];
-        else
-        #endif
-            [delegateProxy watcher: self receivedNotification: nm forPath: fp];
-    }
+-(void) postNotification: (NSString*)nm forFile: (NSString*)fp {
+
+  [delegateProxy watcher: self receivedNotification: nm forPath: fp];
 	
-	if( !delegateProxy || alwaysNotify )
-	{
-		#if UKKQUEUE_SEND_STUPID_NOTIFICATIONS
-		[[[NSWorkspace sharedWorkspace] notificationCenter] postNotificationName: nm object: fp];
-		#else
+	if( !delegateProxy || alwaysNotify ){
 		[[[NSWorkspace sharedWorkspace] notificationCenter] postNotificationName: nm object: self
 																userInfo: [NSDictionary dictionaryWithObjectsAndKeys: fp, @"path", nil]];
-		#endif
 	}
 }
 
@@ -448,14 +436,12 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
 //	Flag to send a notification even if we have a delegate:
 // -----------------------------------------------------------------------------
 
--(BOOL)	alwaysNotify
-{
+-(BOOL)	alwaysNotify {
 	return alwaysNotify;
 }
 
 
--(void)	setAlwaysNotify: (BOOL)n
-{
+-(void)	setAlwaysNotify: (BOOL)n {
 	alwaysNotify = n;
 }
 
@@ -467,12 +453,13 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
 //      %@ format specifier.
 //
 //	REVISIONS:
+//    2010-01-23  M@  Reformatted.
 //		2004-11-12	UK	Created.
 // -----------------------------------------------------------------------------
 
--(NSString*)	description
-{
-	return [NSString stringWithFormat: @"%@ { watchedPaths = %@, alwaysNotify = %@ }", NSStringFromClass([self class]), watchedPaths, (alwaysNotify? @"YES" : @"NO") ];
+-(NSString*)	description {
+	return [NSString stringWithFormat: @"%@ { watchedPaths = %@, alwaysNotify = %@ }", 
+          NSStringFromClass([self class]), watchedPaths, (alwaysNotify? @"YES" : @"NO") ];
 }
 
 @end

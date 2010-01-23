@@ -5,10 +5,14 @@
     COPYRIGHT:  (c) 2005 M. Uli Kusterer, all rights reserved.
     
 	AUTHORS:	M. Uli Kusterer - UK
-    
+            Matthieu Cormier - M@
+ 
     LICENSES:   MIT License
 
 	REVISIONS:
+    2010-01-23  M@  Converted UKFileWatcherDelegate to protocol.  Instead of
+                    a category.  Allows for compile time checking.
+                    Require protocol when setting delegate.
 		2006-03-13	UK	Moved notification constants to .m file.
 		2005-02-25	UK	Created.
    ========================================================================== */
@@ -24,27 +28,23 @@
 // -----------------------------------------------------------------------------
 //  Protocol:
 // -----------------------------------------------------------------------------
+@protocol UKFileWatcherDelegate;  // Protocol prototype
 
 @protocol UKFileWatcher
-
-// +(id) sharedFileWatcher;			// Singleton accessor. Not officially part of the protocol, but use this name if you provide a singleton.
 
 -(void) addPath: (NSString*)path;
 -(void) removePath: (NSString*)path;
 
 -(id)   delegate;
--(void) setDelegate: (id)newDelegate;
+-(void) setDelegate: (id<UKFileWatcherDelegate>)newDelegate;
 
 @end
 
 // -----------------------------------------------------------------------------
 //  Methods delegates need to provide:
 // -----------------------------------------------------------------------------
-
-@interface NSObject (UKFileWatcherDelegate)
-
+@protocol UKFileWatcherDelegate
 -(void) watcher: (id<UKFileWatcher>)kq receivedNotification: (NSString*)nm forPath: (NSString*)fpath;
-
 @end
 
 

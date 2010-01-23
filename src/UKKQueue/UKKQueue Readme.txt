@@ -42,7 +42,7 @@ notifications (sorry, "write" only).
 
 0.6 - Converted to a Framework.  Made more explit use of protocol for delegates.
 Added a simple example program that monitors ~/desktop and prints a message if 
-there is a change.
+there is a change. (Modifications by Matthieu Cormier)
 
 
 CONTACT:

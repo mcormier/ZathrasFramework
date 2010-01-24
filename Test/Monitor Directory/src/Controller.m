@@ -11,8 +11,6 @@
 
 @implementation Controller
 
-// FIXME: Create example that gets immediate notification.
-
 -(id) init {
   self = [super init];
   if( !self ) 
